@@ -10,12 +10,31 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
+<body class="container m-8 mx-auto">
     <header>
-
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <a class="cursor-pointer"><img src="./images/Logo.png" alt=""></a>
+                </div>
+                <div class="navbar-center flex">
+                    <button class="btn btn-active btn-ghost">Sort by view</button>
+                </div>
+                <div class="navbar-end">
+                    <button class="py-2 px-5 bg-[#FF1F3D] rounded-lg text-white text-lg font-medium">Blog</button>
+                </div>
+            </div>
+        </nav>
     </header>
-    <main>
+    <main class="mt-12">
+        <section>
+            <div id="tab-container" class="tabs justify-center gap-6">
 
+            </div>
+            <div id="video-container" class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+            </div>
+        </section>
     </main>
     <footer>
 
