@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHero Blog</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="container mx-auto my-10">
+    <header>
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="flex-1">
+                    <a class="normal-case text-3xl text-red-600 font-bold">PH <span class="text-black">Blog</span></a>
+                </div>
+                <div class="flex-none gap-2">
+                    <div class="form-control">
+                        <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <hr class="my-8">
+    <main>
+        <section>
+            <h2 class="text-xl font-bold">Question : <span class="text-base font-medium">Discuss the scope of <kbd
+                        class="kbd">var</kbd> <kbd class="kbd">let</kbd> and <kbd class="kbd">const</kbd></span></h2>
+            <p class="pl-5 mt-4 text-lg">In JavaScript <strong>var</strong>, <strong>let</strong>, and
+                <strong>const</strong> are used to declare variables, but they have different scopes and behaviors.
+                Let's discuss the scope of each:</p>
+            <div class="p-10">
+                <div>
+                    <li class="font-bold list-none text-xl">var :</li>
+                    <div class="p-10">
+                        <li class="list-disc text-lg"><strong>var</strong> declarations are function-scoped.This means
+                            that a variable declared with <strong>var</strong> is only accessible within the function.
+                        </li>
+                        <li class="list-disc text-lg">If a <strong>var</strong> variable is declared outside of a
+                            function it becomes global variable,which means it's accessible throughout the program</li>
+                        <li class="list-disc text-lg">Variable declared with <strong>var</strong> are hoisted,that means
+                            they are moved to the top their containing function.This can cause an unexpected behavior if
+                            you try to access before declare.</li>
+                    </div>
+                </div>
+                <div>
+                    <li class="font-bold list-none text-xl">let :</li>
+                    <div class="p-10">
+                        <li class="list-disc text-lg"><strong>let</strong> declaration is block-scoped.That means a
+                            variable declared with <strong>let</strong> only accessable within the block where it is
+                            define.</li>
+                        <li class="list-disc text-lg"><strong>let</strong> variables are not hoisted.This means you
+                            can't access them before their declaration in the code </li>
+                    </div>
+                </div>
+                <div>
+                    <li class="font-bold list-none text-xl">const :</li>
+                    <div class="p-10">
+                        <li class="list-disc text-lg">Like <strong>let</strong>, <strong>const</strong> declarations are
+                            block-scoped.</li>
+                        <li class="list-disc text-lg">The key difference is that once you assign a value to a
+                            <strong>const</strong> variable, you cannot reassign it to a different value. The variable
+                            remains constant.</li>
+                        <li class="list-disc text-lg">However, the contents of an object or an array declared with
+                            <strong>const</strong> can still be modified. The immutability applies only to the
+                            reference, not the object's properties or array elements.</li>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-xl font-bold">Question : <span class="text-base font-medium">Tell us the use cases of <kbd class="kbd">null</kbd> and <kbd class="kbd">undefined</kbd></span></h2>
+            <p class="pl-5 mt-4 text-lg">When a value is absent or a variable hasn't been given a value in JavaScript, the two separate values <strong>null</strong> and <strong>undefined</strong> are frequently used to represent these situations. They differ in their use cases despite sharing some similarities:</p>
+            <div class="p-10">
+                <div>
+                    <li class="font-bold list-none text-xl">null :</li>
+                    <div class="p-10">
+                        <li class="list-disc text-lg"><strong>null</strong> is a primitive value in JavaScript</li>
+                        <li class="list-disc text-lg">It is often used to explicitly indicate the absence of a value or to reset a variable or object property to a state with no value</li>
+                        <li class="list-disc text-lg">Developers purposefully assign the value <strong>null</strong>, as opposed to <strong>undefined</strong>, to denote that a variable or property has no meaningful value.
+                        </li>
+                    </div>
+                </div>
+                <div>
+                    <li class="font-bold list-none text-xl">undefined :</li>
+                    <div class="p-10">
+                        <li class="list-disc text-lg"><strong>undefined</strong> is also a primitive value in JavaScript</li>
+                        <li class="list-disc text-lg">It is often automatically assigned to variables that have been declared but not initialized with a value.</li>
+                        <li class="list-disc text-lg">Functions that do not explicitly return a value will also return <strong>undefined</strong> by default.
+                        </li>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2 class="text-xl font-bold">Question : <span class="text-base font-medium">What do you mean by REST API?</span></h2>
+            <p class="pl-5 mt-4 text-lg">REST API stands for Representational State Transfer Application Programming Interface. It is a set of architectural principles and constraints for designing and interacting with web services. REST is not a technology or a protocol itself but rather a set of guidelines and best practices for creating web services that are scalable, maintainable, and easy to understand.</p>
+        </section>
+    </main>
+</body>
+
+</html>
