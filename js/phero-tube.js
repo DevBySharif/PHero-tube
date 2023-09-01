@@ -11,8 +11,16 @@ const handleCategory = async () => {
   categories.forEach((category) => {
     const div = document.createElement("div");
     div.innerHTML = `
-            <a onclick ="loadCategoryData(${category?.category_id})" class="tab bg-[#b0aeaeb2] bg-opacity-40 rounded-md px-5">${category.category}</a>
+            <a onclick ="loadCategoryData(${category?.category_id})" class="tab bg-[#441515b2] text-white rounded-md px-5">${category.category}</a>
         `;
+    div.querySelector('a').addEventListener('click', ()=>{
+      const allTabs = tabContainer.querySelectorAll('.tab');
+      allTabs.forEach((tab) =>{
+        tab.classList.remove('bg-red-500', 'hover:bg-red-600', 'active:bg-red-700', 'focus:outline-none', 'focus:ring', 'focus:ring-red-300')
+      })
+      div.querySelector('a').classList.add('bg-red-500', 'hover:bg-red-600', 'active:bg-red-700', 'focus:outline-none', 'focus:ring', 'focus:ring-red-300');
+      loadCategoryData(category?.category_id)
+    })
     tabContainer.appendChild(div);
   });
 };
@@ -31,6 +39,7 @@ const loadCategoryData = async (categoryId) => {
 
   const videoContainer = document.getElementById("video-container");
   videoContainer.innerHTML = "";
+
 
   if (categoryItems.length === 0) {
     const messageDiv = document.createElement("div");
@@ -110,6 +119,7 @@ const loadCategoryData = async (categoryId) => {
 const btnBlogHandler = () =>{
   window.location.href = 'blog.html'
 }
+
 
 handleCategory();
 loadCategoryData("1000");
