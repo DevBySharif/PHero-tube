@@ -83,6 +83,13 @@ const loadCategoryData = async (categoryId) => {
       const remainingSecond = totalSecond % 3600;
       const minutes = parseInt(remainingSecond / 60);
 
+      videoContainer.classList.add(
+        "grid",
+        "grid-cols-1",
+        "md:grid-cols-2",
+        "lg:grid-cols-4"
+      );
+
       const div = document.createElement("div");
       div.classList = `card w-96 bg-base-100 shadow-xl`;
       div.innerHTML = `
