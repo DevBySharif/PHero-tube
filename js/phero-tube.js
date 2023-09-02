@@ -13,14 +13,30 @@ const handleCategory = async () => {
     div.innerHTML = `
             <a onclick ="loadCategoryData(${category?.category_id})" class="tab bg-[#441515b2] text-white rounded-md px-5">${category.category}</a>
         `;
-    div.querySelector('a').addEventListener('click', ()=>{
-      const allTabs = tabContainer.querySelectorAll('.tab');
-      allTabs.forEach((tab) =>{
-        tab.classList.remove('bg-red-500', 'hover:bg-red-600', 'active:bg-red-700', 'focus:outline-none', 'focus:ring', 'focus:ring-red-300')
-      })
-      div.querySelector('a').classList.add('bg-red-500', 'hover:bg-red-600', 'active:bg-red-700', 'focus:outline-none', 'focus:ring', 'focus:ring-red-300');
-      loadCategoryData(category?.category_id)
-    })
+    div.querySelector("a").addEventListener("click", () => {
+      const allTabs = tabContainer.querySelectorAll(".tab");
+      allTabs.forEach((tab) => {
+        tab.classList.remove(
+          "bg-red-500",
+          "hover:bg-red-600",
+          "active:bg-red-700",
+          "focus:outline-none",
+          "focus:ring",
+          "focus:ring-red-300"
+        );
+      });
+      div
+        .querySelector("a")
+        .classList.add(
+          "bg-red-500",
+          "hover:bg-red-600",
+          "active:bg-red-700",
+          "focus:outline-none",
+          "focus:ring",
+          "focus:ring-red-300"
+        );
+      loadCategoryData(category?.category_id);
+    });
     tabContainer.appendChild(div);
   });
 };
@@ -33,26 +49,23 @@ const loadCategoryData = async (categoryId) => {
   );
   const data = await response.json();
   const categoryItems = data.data;
-  console.log(categoryItems);
 
   // category details container
 
   const videoContainer = document.getElementById("video-container");
   videoContainer.innerHTML = "";
-
-
+  
   if (categoryItems.length === 0) {
     const messageDiv = document.createElement("div");
     videoContainer.classList.remove(
       "grid",
       "grid-cols-1",
       "md:grid-cols-2",
-      "lg:grid-cols-4",
-      "gap-6"
+      "lg:grid-cols-4"
     );
+    
 
-    messageDiv.innerHTML =
-     `<div class = "text-center">
+    messageDiv.innerHTML = `<div class = "text-center">
         <div class="flex justify-center items-center">
         <img src="./images/icon.png"/>
         </div>
@@ -60,10 +73,10 @@ const loadCategoryData = async (categoryId) => {
       </div>`;
 
     videoContainer.appendChild(messageDiv);
-
   } else {
     categoryItems.forEach((video) => {
       // console.log(video)
+
       // convert second to hours and minutes
       const totalSecond = video?.others?.posted_date;
       const hours = parseInt(totalSecond / 3600);
@@ -71,7 +84,7 @@ const loadCategoryData = async (categoryId) => {
       const minutes = parseInt(remainingSecond / 60);
 
       const div = document.createElement("div");
-      div.classList = `card bg-base-100 shadow-xl`;
+      div.classList = `card w-96 bg-base-100 shadow-xl`;
       div.innerHTML = `
         <div class= "relative">
           <figure><img class= "w-full h-[200px] rounded-lg" src="${
@@ -106,7 +119,7 @@ const loadCategoryData = async (categoryId) => {
               </svg>`
           : ""
       }</small>
-                <small class= "block">${video.others.views} views</small>
+              <small class= "block">${video.others.views} views</small>
             </div>    
         </div>
         `;
@@ -116,10 +129,9 @@ const loadCategoryData = async (categoryId) => {
   }
 };
 
-const btnBlogHandler = () =>{
-  window.location.href = 'blog.html'
-}
-
+const btnBlogHandler = () => {
+  window.location.href = "blog.html";
+};
 
 handleCategory();
 loadCategoryData("1000");
