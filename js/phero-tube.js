@@ -91,7 +91,7 @@ const loadCategoryData = async (categoryId) => {
       );
 
       const div = document.createElement("div");
-      div.classList = `card w-96 bg-base-100 shadow-xl`;
+      div.classList = `card lg:w-96 bg-base-100 shadow-xl`;
       div.innerHTML = `
         <div class= "relative">
           <figure><img class= "w-full h-[200px] rounded-lg" src="${
